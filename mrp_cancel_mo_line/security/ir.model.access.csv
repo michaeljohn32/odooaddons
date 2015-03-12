@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mrp_cancel_mo_line_mrp_cancel_mo_line,mrp_cancel_mo_line.mrp_cancel_mo_line,model_mrp_cancel_mo_line_mrp_cancel_mo_line,,1,0,0,0

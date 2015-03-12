@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_cancel_mrp_move" model="ir.ui.view">
+            <field name="name">Cancel a Move</field>
+            <field name="model">mrp_cancel_mo_line.cancel_move_wiz</field>
+            <field name="arch" type="xml">
+                <form string="Cancel This Move">
+                    <group string="Are You Sure?">
+                    </group>
+                    <footer>
+                        <button name="cancel_move" type="object" string="Yes" class="oe_highlight"/> or <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--
+        <act_window name="Update With Analytics"
+            src_model="stock.picking"
+            res_model="stock_add_analytic_products.update_stock_picking_wiz"
+            id="wiz_update_stock_picking"
+            view_mode="form"
+            target="new" /> 
+            -->
+        <record model="ir.actions.act_window" id="action_cancel_move">
+            <field name="name">Cancel a Move</field>
+            <field name="res_model">mrp_cancel_mo_line.cancel_move_wiz</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cancel_mrp_move"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+        </record>
+    </data>
+</openerp>
+<!--
+vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+-->

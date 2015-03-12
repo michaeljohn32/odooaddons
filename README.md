@@ -15,3 +15,13 @@ move needs to be costed later
 Finally, when a new item is "Produced":
 - We add up the material cost of all subproducts
 - Update the Product's cost with the value just obtained
+
+"mrp_cancel_mo_line"
+====================
+This addon provides an easy way to cancel a manufacturing
+order's line.  
+
+Our usage is that if that particular line is not needed (ie
+the bill of materials is wrong), we can mark it as cancelled
+so the products are not reserved or required to produce a
+particular bill of material.
