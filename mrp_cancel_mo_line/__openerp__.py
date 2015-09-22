@@ -23,7 +23,7 @@
 
     # adding mrp_send_to_production for the button states
     #  in the view.xml
-    'depends': ['mrp','mrp_send_to_production'],
+    'depends': ['mrp'],
 
     # always loaded
     'data': [

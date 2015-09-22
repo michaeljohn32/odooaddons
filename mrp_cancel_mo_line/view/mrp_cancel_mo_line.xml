@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//button[@name='%(stock.move_scrap)d']" position="after">
-                <button name="%(action_cancel_move)d"  string="Cancel Scheduled Product" type="action" icon="gtk-cancel" states="draft,to_production,waiting,confirmed,assigned"/> <!-- Should I add a groups= line??? -->
+                <button name="%(action_cancel_move)d"  string="Cancel Scheduled Product" type="action" icon="gtk-cancel" states="draft,waiting,confirmed,assigned"/> <!-- Should I add a groups= line??? -->
             </xpath>
         </field>
      </record>
