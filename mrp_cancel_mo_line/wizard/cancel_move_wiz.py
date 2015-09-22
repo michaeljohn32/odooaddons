@@ -2,7 +2,6 @@
 
 from openerp import models, fields, api
 from datetime import datetime
-import pdb
 
 class cancel_move_wiz(models.TransientModel):
     _name = 'mrp_cancel_mo_line.cancel_move_wiz'
@@ -14,7 +13,6 @@ class cancel_move_wiz(models.TransientModel):
             Cancels a Move 
         '''
         # Need to ensure it is one since we are in an action
-        pdb.set_trace()
         self.ensure_one()
 
         move = self.env['stock.move'].browse(self.env.context['active_id'])
