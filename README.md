@@ -25,3 +25,12 @@ Our usage is that if that particular line is not needed (ie
 the bill of materials is wrong), we can mark it as cancelled
 so the products are not reserved or required to produce a
 particular bill of material.
+
+"mrp_mto_with_stock"
+====================
+This addon makes a manufacturing order pull from stock
+till the quantity is zero, and then generates a procurement
+
+NOTE: this module depends on the OCA module: stock_mto_mts_rule
+
+
