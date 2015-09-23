@@ -33,4 +33,11 @@ till the quantity is zero, and then generates a procurement
 
 NOTE: this module depends on the OCA module: stock_mto_mts_rule
 
+"mrp_send_to_production"
+====================
+This addon makes an extra stage in the manufacturing process
+to confirm that the MO was "sent to production" 
 
+This is useful when we need an extra confirmation step
+that the work order/manufacturing order is in the production
+department's hands

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+     <record model="ir.ui.view" id="mrp_send_to_production.production_form_inherit">
+        <field name="name">mrp.send.to.production.form</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Make the 'Check Availability' button appear later 
+            in the workflow -->
+            <xpath expr="//button[@name='action_assign']" position="attributes">
+                <attribute name="states">to_production,picking_except</attribute>
+            </xpath>
+            <!-- Allow the user to cancel production in the
+            to_production state -->
+            <xpath expr="//button[@name='action_cancel']" position="attributes">
+                <attribute name="states">confirmed,to_production</attribute>
+            </xpath>
+            <!-- Add the to_production button -->
+            <xpath expr="//button[@name='action_assign']" position="before">
+                <button name="button_to_production" states="confirmed" string="Sent to Production" class="oe_highlight"/>
+            </xpath>
+
+            <!-- Update the status bar to add the to_production state -->
+            <xpath expr="//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,to_production,ready,in_production,done" statusbar_colors='{"confirmed":"blue"}' readonly="1"/>
+            </xpath>
+        </field>
+     </record>
+
+    </data>
+</openerp>
+<!--
+vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+-->

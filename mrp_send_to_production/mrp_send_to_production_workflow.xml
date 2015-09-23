@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- New activity to Show mo is "confirmed"
+             but not printed out/sent to production -->
+        <record id="prod_act_to_production" model="workflow.activity">
+            <field name="wkf_id" ref="mrp.wkf_prod"/>
+            <field name="name">to_production</field>
+            <field name="kind">function</field>
+            <field name="action">action_send_to_production()</field>
+        </record>
+        
+        <!-- This id is inherited from the mrp module -->
+        <!-- user has to hit the button_to_production to transition out -->
+        <record id="mrp.prod_trans_picking_ready" model="workflow.transition">
+            <field name="act_from" ref="mrp.prod_act_confirmed"/>
+            <field name="act_to" ref="prod_act_to_production"/>
+            <field name="signal">button_to_production</field>
+            <field name="condition">True</field>
+        </record>
+        <!-- To transition out of to_production, all the moves
+        have to be available -->
+        <record id="trans_to_prod_ready" model="workflow.transition">
+            <field name="act_from" ref="prod_act_to_production"/>
+            <field name="act_to" ref="mrp.prod_act_ready"/>
+            <field name="signal">moves_ready</field>
+            <field name="trigger_model" eval="False"/> <!-- Force empty -->
+            <field name="trigger_expr_id" eval="False"/> <!-- Force empty --> 
+            <field name="condition">True</field> <!-- Force default -->
+        </record>
+        <!-- 
+        Provide a transition to cancel the order in 
+        the to_production state -->
+        <record id="prod_trans_to_production_cancel" model="workflow.transition">
+            <field name="act_from" ref="prod_act_to_production"/>
+            <field name="act_to" ref="mrp.prod_act_cancel"/>
+            <field name="signal">button_cancel</field>
+        </record>
+    </data>
+</openerp>
+<!--
+vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+-->
