@@ -41,3 +41,10 @@ to confirm that the MO was "sent to production"
 This is useful when we need an extra confirmation step
 that the work order/manufacturing order is in the production
 department's hands
+
+"stock_location_transfer_stock"
+====================
+This addon adds an option to the "More" dropdown of the "Locations"
+view in the warehouse that allows you transfer all unreserved stock 
+from one internal location to another.
+

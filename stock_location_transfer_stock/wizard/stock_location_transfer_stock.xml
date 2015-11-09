@@ -1,0 +1,32 @@
+<openerp>
+    <data>
+        <record id="stock_location_transfer_stock_form" model="ir.ui.view">
+            <field name="name">Transfer Stock From Location</field>
+            <field name="model">stock.location.transfer_wiz</field>
+            <field name="arch" type="xml">
+                <form string="Transfer Stock">
+                    <group string="Select the desired destination location">
+                        <field name="dest_loc_id" domain="[('usage','=','internal')]" />
+                    </group>
+                    <footer>
+                        <button name="transfer_stock" type="object" string="Create Pickings" class="oe_highlight"/> 
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="stock_location_transfer_stock_act"
+            name="Transfer Stock From Selected Locations"
+            src_model="stock.location"
+            res_model="stock.location.transfer_wiz"
+            target="new"
+            view_mode="form"
+            multi="True"
+        />
+    </data>
+</openerp>
+
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4: 
+-->
+
