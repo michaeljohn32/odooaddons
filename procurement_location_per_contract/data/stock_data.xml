@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="route_project_location" model="stock.location.route">
+            <field name="name">Stock -> Job</field>
+            <field name="sequence">10</field>
+            <field name="product_selectable" eval="False"/>
+        </record>
+    </data>
+</openerp>
+<!-- vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4: 
+-->

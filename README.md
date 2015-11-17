@@ -42,6 +42,16 @@ This is useful when we need an extra confirmation step
 that the work order/manufacturing order is in the production
 department's hands
 
+"procurement_location_per_contract"
+====================
+This addon requires the OCA's stock_mts_mto_rule, and expands on it
+to add a location under WH\Stock that is specific to the contract on
+the sales order.
+
+This is useful when the warehouse has contract specific locations 
+designated in the warehouse where stock is pulled from for manufacturing
+a particular project/product.
+ 
 "stock_location_transfer_stock"
 ====================
 This addon adds an option to the "More" dropdown of the "Locations"
